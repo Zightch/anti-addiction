@@ -6,5 +6,5 @@
 `LoliServer`  
 `CatServer`  
 # 下载地址  
-[源代码下载]()  
+[源代码下载](https://github.com/Zightch/anti-addiction/archive/refs/heads/main.zip)  
 [jar下载]()  
