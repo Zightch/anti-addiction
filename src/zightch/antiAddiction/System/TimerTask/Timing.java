@@ -25,7 +25,7 @@ public class Timing extends BukkitRunnable {
     @Override
     public void run() {
         long time = Integer.parseInt(new SimpleDateFormat("HHmm").format(new Date()));
-        if (time >= 2250 && warning == false) {
+        if (time >= 2250 && !warning) {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (!player.isOp()) {
                     player.sendMessage("§6现在时间是 §522:50\n§6你还剩余 §510分钟 §6的游戏时间");

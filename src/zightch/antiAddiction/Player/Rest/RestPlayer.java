@@ -7,7 +7,7 @@ import zightch.antiAddiction.Player.Rest.TimerTask.TimeoutDetection;
 import zightch.antiAddiction.System.SystemData;
 
 public class RestPlayer {
-    private String playerName;
+    private final String playerName;
     private final TimeoutDetection ts;
 
     public RestPlayer(Player player, Plugin plugin) {

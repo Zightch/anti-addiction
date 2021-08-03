@@ -9,12 +9,10 @@ import zightch.antiAddiction.Player.Rest.RestPlayer;
 import zightch.antiAddiction.System.SystemData;
 
 public class TimeoutDetection extends BukkitRunnable {
-    private final AntiAddictionPlayer aap;
     private final Plugin plugin;
     private final Player player;
 
-    public TimeoutDetection(AntiAddictionPlayer aap, Player player, Plugin plugin) {
-        this.aap=aap;
+    public TimeoutDetection(Player player, Plugin plugin) {
         this.player = player;
         this.plugin = plugin;
     }

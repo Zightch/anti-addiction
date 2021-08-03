@@ -18,14 +18,14 @@ public class AntiAddictionPlayer {
     public AntiAddictionPlayer(Player player, Plugin plugin) {
         playerName = player.getName();
         this.loginTime = new Date();
-        ts = new TimeoutDetection(this, player, plugin);
+        ts = new TimeoutDetection(player, plugin);
         ts.start(SystemData.maximumOnlineTime);
     }
 
     public AntiAddictionPlayer(Player player, Plugin plugin, long time) {
         playerName = player.getName();
         this.loginTime = new Date();
-        ts = new TimeoutDetection(this, player, plugin);
+        ts = new TimeoutDetection(player, plugin);
         if (time == 0)
             ts.start(SystemData.maximumOnlineTime);
         else ts.start(time);

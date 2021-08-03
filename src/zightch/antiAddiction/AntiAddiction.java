@@ -39,7 +39,7 @@ public class AntiAddiction
     }
 
     @EventHandler
-    public void Join(PlayerJoinEvent event) {
+    public void join(PlayerJoinEvent event) {
         for (int i = 0, length = SystemData.apl.size(); i < length; i++) {
             if (event.getPlayer().getName().equals(SystemData.apl.get(i).getPlayerName())) {
                 long timeDifference = ((new Date()).getTime() - SystemData.apl.get(i).getLogoutTime().getTime()) / 1000;
@@ -58,7 +58,7 @@ public class AntiAddiction
     }
 
     @EventHandler
-    public void Login(PlayerLoginEvent event) {
+    public void login(PlayerLoginEvent event) {
         int hour = 0;
         hour = Integer.parseInt((new SimpleDateFormat("HH")).format(new Date()));
         if ((hour < 7 | hour > 22) & !event.getPlayer().isOp()) {
