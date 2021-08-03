@@ -4,7 +4,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import zightch.antiAddiction.Player.Rest.RestPlayer;
-import zightch.antiAddiction.SystemData;
+import zightch.antiAddiction.System.SystemData;
 
 public class TimeoutDetection extends BukkitRunnable {
     private final Plugin plugin;

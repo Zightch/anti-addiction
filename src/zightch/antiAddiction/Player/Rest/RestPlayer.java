@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import zightch.antiAddiction.Player.Rest.TimerTask.TimeoutDetection;
-import zightch.antiAddiction.SystemData;
+import zightch.antiAddiction.System.SystemData;
 
 public class RestPlayer {
     private String playerName;

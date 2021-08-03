@@ -6,7 +6,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import zightch.antiAddiction.Player.AntiAddiction.AntiAddictionPlayer;
 import zightch.antiAddiction.Player.Rest.RestPlayer;
-import zightch.antiAddiction.SystemData;
+import zightch.antiAddiction.System.SystemData;
 
 public class TimeoutDetection extends BukkitRunnable {
     private final AntiAddictionPlayer aap;

@@ -8,6 +8,8 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import zightch.antiAddiction.Player.AntiAddiction.AntiAddictionPlayer;
+import zightch.antiAddiction.System.SystemData;
+import zightch.antiAddiction.System.TimerTask.Timing;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,7 +21,6 @@ public class AntiAddiction
         implements Listener {
     @Override
     public void onLoad() {
-        getLogger().info("防沉迷插件已加载");
     }
 
 
@@ -27,6 +28,7 @@ public class AntiAddiction
     public void onEnable() {
         getLogger().info("防沉迷插件已启动");
         Bukkit.getPluginManager().registerEvents(this, this);
+        new Timing(this);
     }
 
     @Override
@@ -46,7 +48,7 @@ public class AntiAddiction
                     i--;
                     length--;
                 } else {
-                    SystemData.apl.add(new AntiAddictionPlayer(event.getPlayer(), this,SystemData.maximumOnlineTime - SystemData.apl.get(i).getOnlineTime() + timeDifference));
+                    SystemData.apl.add(new AntiAddictionPlayer(event.getPlayer(), this, SystemData.maximumOnlineTime - SystemData.apl.get(i).getOnlineTime() + timeDifference));
                     SystemData.apl.remove(i);
                     return;
                 }
@@ -57,15 +59,10 @@ public class AntiAddiction
 
     @EventHandler
     public void Login(PlayerLoginEvent event) {
-        SimpleDateFormat df = new SimpleDateFormat("HH");
         int hour = 0;
-        try {
-            hour = Integer.parseInt(df.format(new Date()));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
+        hour = Integer.parseInt((new SimpleDateFormat("HH")).format(new Date()));
         if ((hour < 7 | hour > 22) & !event.getPlayer().isOp()) {
-            event.disallow(KICK_OTHER, "§4现在的时间段不允许你登录游戏\n§5你可以在 §27:00 - 22:00 §5时间段正常登陆游戏");
+            event.disallow(KICK_OTHER, "§4现在的时间段不允许你登录游戏\n§5你可以在 §27:00 - 23:00 §5时间段正常登陆游戏");
         }
         for (int i = 0, length = SystemData.rpl.size(); i < length; i++) {
             if (SystemData.rpl.get(i).getPlayerName().equals(event.getPlayer().getName())) {

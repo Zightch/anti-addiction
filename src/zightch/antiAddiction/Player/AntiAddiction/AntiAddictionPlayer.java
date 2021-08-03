@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import zightch.antiAddiction.Player.AntiAddiction.TimerTask.TimeoutDetection;
-import zightch.antiAddiction.SystemData;
+import zightch.antiAddiction.System.SystemData;
 
 public class AntiAddictionPlayer {
     private long onlineTime;
